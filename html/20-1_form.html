@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>실습</title>
+  </head>
+  <body>
+    <h1>웹 개발 교육 상담 문의</h1>
+
+    <p>
+      HTML,CSS,JavaScript,React,프론트엔드 교육 과정에 대해 궁금한 내용을
+      남겨주세요. 담당자가 확인 후 안내드립니다.
+    </p>
+
+    <form method="get">
+      <section>
+        <fieldset>
+          <legend>상담 신청 정보</legend>
+          <nav>
+            <label for="name">이름 *</label>
+            <input type="text" placeholder="이름을 입력하세요" /><br /><br />
+            실명을 입력해주세요.
+          </nav>
+          <br />
+          <nav>
+            <label for="email">이메일 *</label>
+            <input type="email" placeholder="example@email.com" /><br /><br />
+            답변을 받을 이메일 주소를 입력해주세요.
+          </nav>
+          <br />
+          <nav>
+            연락처
+            <input type="number" name="phone" placeholder="010-xxxx-xxxx" />
+          </nav>
+          <nav>
+            <label for="course">관심과정 *</label>
+            <select name="course">
+              <option value="">선택하세요</option>
+              <option value="HTML">HTML</option>
+              <option value="CSs">CSS</option>
+              <option value="JAVASCRIPT">JAVASCRIPT</option>
+              <option value="REACT">REACT</option>
+            </select>
+          </nav>
+          <nav>
+            <label for="question">문의과정 *</label>
+            <textarea
+              name=""
+              id=""
+              placeholder="궁금한 내용을 자세히 입력해주세요"
+            ></textarea
+            ><br /><br />
+            예: 수업 일정, 수강 대상, 비용, 프로젝트 중심 수업 여부 등
+          </nav>
+          <br />
+          <nav>
+            <input type="checkbox" value="agree" /><label name="agree"
+              >개인정보 수집 및 이용에 동의합니다. *</label
+            >
+          </nav>
+          <button type="submit">상담 문의 보내기</button>
+        </fieldset>
+      </section>
+    </form>
+  </body>
+</html>
