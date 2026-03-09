@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CSS-Unit" />
+    <title>CSS-Unit</title>
+
+    <!-- 픽셀은 절대적인 크기이기때문에 화면 크기 변화에 ui변화가 없지만 %는 유동적으로 변함 -->
+    <style>
+      h1 {
+        width: 1000px;
+        background-color: peru;
+      }
+      #pixel {
+        width: 600px;
+        background-color: lightgray;
+      }
+      #percent {
+        width: 50%;
+        background-color: silver;
+      }
+      h5 {
+        font-size: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS-Unit</h1>
+    <h2 id="pixel">Pixel</h2>
+
+    <div id="pixel">
+      <h5>CSS-Pixel</h5>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab dignissimos
+        minus consequatur animi quos, earum dolor voluptatibus repudiandae,
+        inventore officiis, molestiae temporibus labore sit culpa harum ratione
+        corrupti quis quod?
+      </p>
+    </div>
+    <h2 id="percent">Percent(%)</h2>
+    <div id="percent">
+      <h5>CSS-Percent</h5>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum dicta
+        error expedita nostrum cupiditate qui aliquam iusto illo, blanditiis eos
+        veritatis quos explicabo, perferendis quae? Cumque eveniet ad aliquam
+        quibusdam!
+      </p>
+    </div>
+  </body>
+</html>

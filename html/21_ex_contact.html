@@ -3,37 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="웹개발 상담문의" />
     <title>웹 개발 상담 문의</title>
+    <style>
+      div {
+        margin: 3px;
+      }
+    </style>
   </head>
   <body>
     <header></header>
     <main>
       <section>
-        <h1>웹 개발 교육 상담 문의</h1>
-        <p>
+        <h1 id="title">웹 개발 교육 상담 문의</h1>
+        <p id="sub title">
           HTML,CSS,JavaScript,React,프론트엔드 교육 과정에 대해 궁금한 내용을
           남겨주세요. 담당자가 확인 후 안내드립니다.
         </p>
         <form action="#" method="get">
           <fieldset>
             <legend>상담 신청 정보</legend>
-            <div>
+            <div id="div1">
               <label for="name">이름 <sup>*</sup></label>
-              <input type="text" name="name" placeholder="이름을 입력하세요" />
+              <input
+                type="text"
+                name="name"
+                placeholder="이름을 입력하세요"
+                id="name"
+              />
               <p>실명을 입력해주세요</p>
             </div>
-            <div>
+            <div id="div2">
               <label for="email">이메일 <sup>*</sup></label>
-              <input type="text" name="email" placeholder="example@email.com" />
+              <input
+                type="text"
+                name="email"
+                placeholder="example@email.com"
+                id="email"
+              />
               <p>답변을 받을 이메일 주소를 입력해주세요</p>
             </div>
-            <div>
+            <div id="div3">
               <label for="phone">연락처</label>
-              <input type="tel" name="phone" placeholder="010-0000-0000" />
+              <input
+                type="tel"
+                name="phone"
+                placeholder="010-0000-0000"
+                id="phone"
+              />
             </div>
-            <div>
+            <div id="div4">
               <label for="course">관심 과정</label>
-              <select name="course">
+              <select name="course" id="course">
                 <option value="선택">선택하세요</option>
                 <option value="html">html</option>
                 <option value="CSs">CSs</option>
@@ -41,21 +62,22 @@
                 <option value="React">React</option>
               </select>
             </div>
-            <div>
+            <div id="div5">
               <label for="message">문의 내용 <sup>*</sup></label>
               <textarea
                 name="message"
                 placeholder="궁금한 내용을 자세히 입력해주세요"
+                id="message"
               ></textarea>
               <p>예: 수업일정, 수강대상, 비용, 프로젝트 중심 수업 여부 등</p>
             </div>
             <div>
-              <input type="checkbox" name="agree" />
+              <input type="checkbox" name="agree" id="agree" />
               <label for="agree"
                 >개인정보 수집 및 이용에 동의합니다. <sup>*</sup></label
               >
             </div>
-            <div>
+            <div id="submit">
               <button type="submit">상담문의 보내기</button>
             </div>
           </fieldset>
