@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pseudo Selector" />
+    <title>Pseudo Selector</title>
+    <style>
+      /* h1 태그 앞에 content에 해당하는 내용을 추가하고 글자색을 초록생으로 정의 */
+
+      * {
+        margin: 5px;
+      }
+      h1::before {
+        content: "h1 앞에 추가되는 내용";
+        color: khaki;
+      }
+      h1::after {
+        content: "h1 뒤에 추가되는 내용";
+        color: teal;
+      }
+      a {
+        text-decoration: none;
+      }
+      a.naver:hover {
+        background-color: blue;
+        color: white;
+      }
+      a.google:hover {
+        background-color: red;
+        color: white;
+      }
+      a.daum:hover {
+        background-color: black;
+        color: white;
+      }
+      a.naver:active {
+        color: gold;
+      }
+      a.naver:visited {
+        color: gray;
+      }
+      input {
+        outline: none;
+      }
+      input:focus {
+        background-color: thistle;
+        border: 2px solid red;
+        border-radius: 3px;
+      }
+      /* 수열 */
+      ul.menus li:nth-child(3),
+      ul.menus li:first-child,
+      ul.menus li:last-child {
+        background-color: dimgray;
+      }
+      ul.menus li a {
+        color: yellow;
+      }
+      div p:nth-child(n + 1) {
+        background-color: gainsboro;
+      }
+      div p:nth-child(2n) {
+        background-color: gray;
+      }
+      table tr:nth-child(2n) {
+        background-color: darkgrey;
+      }
+      input:checked + span {
+        background-color: lightblue;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pseudo Selector</h1>
+    <p>
+      <a href="http://www.naver.com" class="naver">Naver</a>
+      <a href="http://www.google.com" class="google">Google</a>
+      <a href="http://www.Daum.net" class="daum">Daum</a>
+    </p>
+    <form action="#">
+      <ul>
+        <li>
+          <label for="name">이름</label>
+          <input type="text" name="name" id="name" />
+        </li>
+        <li>
+          <label for="address">주소</label>
+          <input type="text" name="address" id="address" />
+        </li>
+        <li>
+          <label for="hobby">취미를 선택해주세요</label>
+          <input type="checkbox" name="hobby" value="game" checked /><span
+            >게임하기</span
+          >
+          <input type="checkbox" name="hobby" value="music" /><span
+            >음악듣기</span
+          >
+        </li>
+        <li>
+          <label for="menu">메뉴를 선택해주세요</label>
+          <input type="checkbox" name="menu" value="coffee" checked /><span
+            >커피</span
+          >
+          <input type="checkbox" name="menu" value="milk" /><span>우유</span>
+        </li>
+      </ul>
+    </form>
+    <hr />
+    <h1>Pseudo Selector - 수열</h1>
+    <ul class="menus">
+      <li><a href="#">1</a></li>
+      <li><a href="#">2</a></li>
+      <li><a href="#">3</a></li>
+      <li><a href="#">4</a></li>
+      <li><a href="#">5</a></li>
+    </ul>
+    <div>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem eius,
+        architecto vel, iste dolores qui sint dignissimos laborum, ipsam dolor
+        unde quisquam harum quos necessitatibus quidem ea dicta ad natus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem eius,
+        architecto vel, iste dolores qui sint dignissimos laborum, ipsam dolor
+        unde quisquam harum quos necessitatibus quidem ea dicta ad natus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem eius,
+        architecto vel, iste dolores qui sint dignissimos laborum, ipsam dolor
+        unde quisquam harum quos necessitatibus quidem ea dicta ad natus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem eius,
+        architecto vel, iste dolores qui sint dignissimos laborum, ipsam dolor
+        unde quisquam harum quos necessitatibus quidem ea dicta ad natus.
+      </p>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem eius,
+        architecto vel, iste dolores qui sint dignissimos laborum, ipsam dolor
+        unde quisquam harum quos necessitatibus quidem ea dicta ad natus.
+      </p>
+    </div>
+
+    <table>
+      <tr>
+        <th>번호</th>
+        <th>상품명</th>
+        <th>가격</th>
+        <th>비고</th>
+      </tr>
+      <tr>
+        <th>1</th>
+        <td>의자</td>
+        <td>400</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>2</th>
+        <td>책상</td>
+        <td>600</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>3</th>
+        <td>소파</td>
+        <td>900</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>4</th>
+        <td>소파</td>
+        <td>900</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>5</th>
+        <td>소파</td>
+        <td>900</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>6</th>
+        <td>소파</td>
+        <td>900</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>7</th>
+        <td>소파</td>
+        <td>900</td>
+        <td></td>
+      </tr>
+      <tr>
+        <th>8</th>
+        <td>소파</td>
+        <td>900</td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Align Text" />
+    <title>Text Align</title>
+    <style>
+      p {
+        background-color: peru;
+      }
+      span {
+        background-color: burlywood;
+      }
+
+      #b-left {
+        text-align: left;
+        /* letter-spacing: 50px; */
+        text-indent: 50px; /* 들여쓰기 */
+      }
+      #b-right {
+        text-align: right;
+        word-spacing: 50px;
+      }
+      #b-center {
+        text-align: center;
+      }
+
+      #s-left {
+        text-align: left;
+      }
+      #s-right {
+        text-align: right;
+      }
+      #s-center {
+        text-align: center;
+      }
+      div {
+        border: 1px solid brown;
+      }
+      #d-left {
+        text-align: left;
+      }
+      #d-right {
+        text-align: right;
+      }
+      #d-center {
+        text-align: center;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      #img-block {
+        text-align: center;
+        word-spacing: 50px;
+      }
+      .b-justify {
+        width: 300px;
+        background-color: lightsalmon;
+        text-align: justify;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Text Align</h1>
+    <h3>block level</h3>
+    <p id="b-left">text align :: left</p>
+    <p id="b-right">text align :: right</p>
+    <p id="b-center">text align :: center</p>
+    <p class="b-justify">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio ad fugiat
+      dolorum nisi quos voluptatibus magnam, repellat voluptatem nemo harum
+      dolore quas, dolorem nam consequuntur delectus facilis quidem tenetur
+      eaque.
+    </p>
+
+    <h3>inline level</h3>
+    <span id="s-left">text align ::left</span>
+    <span id="s-right">text align ::right</span>
+    <span id="s-center">text align ::center</span>
+
+    <h3>div inline level</h3>
+    <div id="d-left"><span>text align ::left</span></div>
+    <div id="d-right"><span>text align ::right</span></div>
+    <div id="d-center"><span>text align ::center</span></div>
+
+    <h3>inline block level</h3>
+    <div id="img-block">
+      <img src="../images/작고 검은여자.png" alt="" />
+      <img src="../images/작고 검은여자.png" alt="" />
+      <img src="../images/작고 검은여자.png" alt="" />
+      <img src="../images/작고 검은여자.png" alt="" />
+      <img src="../images/작고 검은여자.png" alt="" />
+    </div>
+  </body>
+</html>

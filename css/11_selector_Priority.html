@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Priority Selector" />
+    <title>Selector Priority</title>
+    <style>
+      /* !important >> inline style >> id >> class >> 태그 >> *(All Selector) */
+      * {
+        background-color: lightgray;
+      }
+      h1 {
+        background-color: azure;
+      }
+      div {
+        background-color: antiquewhite;
+      }
+      p {
+        background-color: wheat;
+      }
+      #p1 {
+        color: brown;
+      }
+      .p2 {
+        color: cornflowerblue !important;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Selector Priority</h1>
+    <div>
+      <p id="p1" class="p2" style="color: red">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eius
+        pariatur adipisci a obcaecati amet culpa ipsa! Soluta qui provident, eos
+        non impedit necessitatibus eveniet excepturi doloribus magnam omnis
+        quisquam!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eius
+        pariatur adipisci a obcaecati amet culpa ipsa! Soluta qui provident, eos
+        non impedit necessitatibus eveniet excepturi doloribus magnam omnis
+        quisquam!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eius
+        pariatur adipisci a obcaecati amet culpa ipsa! Soluta qui provident, eos
+        non impedit necessitatibus eveniet excepturi doloribus magnam omnis
+        quisquam!
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="desc_selector" />
+    <title>desc_selector</title>
+    <style>
+      /* descendent selector : 조상[space]자손 스페이스(공백)으로 구분하여 사용한다. 
+         child selector :부모(>)자식
+         sibiling selector : 기준태그[+]형제태그
+         모든 sibiling selector: 기준태그 [~] 형제태그*/
+      h1 {
+        color: blue;
+        background-color: peru;
+      }
+
+      #sub-menu li {
+        color: green;
+      }
+      body > nav {
+        background-color: teal;
+      }
+
+      ul #sub-menu {
+        background-color: peru;
+      }
+      li#main-menu + li > a {
+        color: darkgoldenrod;
+        text-decoration: none;
+      }
+      h2 + p {
+        background-color: thistle;
+      }
+      h2 ~ p {
+        color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Descendent Selector</h1>
+    <nav>
+      <ul>
+        <li id="main-menu">
+          <a href="#">menu1</a>
+          <ul id="sub-menu">
+            <li><a href="#">sub-menu</a></li>
+            <li><a href="#">sub-menu</a></li>
+          </ul>
+        </li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <h2>sibiling selector</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut unde
+          facere repudiandae recusandae at soluta excepturi fuga, vero illo
+          facilis velit perferendis. Quasi tempora ipsa atque nihil libero
+          accusamus dolore.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut unde
+          facere repudiandae recusandae at soluta excepturi fuga, vero illo
+          facilis velit perferendis. Quasi tempora ipsa atque nihil libero
+          accusamus dolore.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut unde
+          facere repudiandae recusandae at soluta excepturi fuga, vero illo
+          facilis velit perferendis. Quasi tempora ipsa atque nihil libero
+          accusamus dolore.
+        </p>
+      </ul>
+    </nav>
+  </body>
+</html>
