@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="display style" />
+    a
+    <title>Display Style</title>
+    <style>
+      /*display 프로퍼티 : block, inline, inline-block level 전환*/
+      /* 블럭레벨이라면 width가 아무리 줄어도 inline태그가 한줄에 있을 수 없음 */
+      div {
+        /* block - level은 width, height 적용 */
+        background-color: peru;
+        width: 50%;
+        height: 100px;
+      }
+      span,
+      button,
+      input {
+        /* inline-level은 width, height 적용 불가능. */
+        /* button,input태그는 적용 가능. */
+        background-color: lightcoral;
+        width: 40%;
+        height: 100px;
+      }
+      img {
+        /* inline-block-level은 width,height 적용가능 */
+        width: 200px;
+        height: 200px;
+        display: block;
+        background-color: gray;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Display Style</h1>
+    <hr />
+    <div>block-level</div>
+
+    <span>inline-level</span>
+    <button>클릭</button>
+    <input type="text" value="사영노" />
+    <img src="../images/작고 검은여자.png" alt="inline-block img" />
+  </body>
+</html>

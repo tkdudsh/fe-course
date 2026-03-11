@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Overflow style" />
+    <title>Overflow style</title>
+    <style>
+      /* overflow란 부모요소보다 자식요소가 클때 영역을 벗어나는 부분 */
+      p {
+        margin: 50px;
+      }
+      /* p1: 가로-200 세로: 200 */
+      .p1 {
+        background-color: lightgray;
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+        /* overflow auto는 스크롤가능하도록 기능하게함  x,y를 통해 원하는 곳을 지정할 수 있음*/
+      }
+      /* p1: 가로-300 세로: 200 */
+      .p2 {
+        background-color: darkgray;
+        width: 500px;
+        height: 500px;
+        overflow: hidden;
+      }
+
+      /* p1: 가로-400 세로: 100 */
+      .p3 {
+        background-color: gray;
+        width: 400px;
+        height: 100px;
+        overflow: hidden;
+        /* 영역 밖에있는 부분을 잘라버림 */
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Overflow Style</h1>
+    <p class="p1">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere officia
+      sequi molestiae exercitationem fugiat tenetur corporis blanditiis ad dolor
+      enim eveniet corrupti, tempora ex ducimus pariatur, a tempore dolore
+      debitis?
+    </p>
+    <div class="p2">
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere officia
+        sequi molestiae exercitationem fugiat tenetur corporis blanditiis ad
+        dolor enim eveniet corrupti, tempora ex ducimus pariatur, a tempore
+        dolore debitis?
+      </p>
+      <img src="../images/호퍼스_1.jpg" alt="" />
+    </div>
+    <p class="p3">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere officia
+      sequi molestiae exercitationem fugiat tenetur corporis blanditiis ad dolor
+      enim eveniet corrupti, tempora ex ducimus pariatur, a tempore dolore
+      debitis?
+    </p>
+  </body>
+</html>

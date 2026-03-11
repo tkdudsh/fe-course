@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lotte HTML" />
+    <title>Lotte Menu</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      header {
+        width: 1000px;
+        margin: auto;
+      }
+      .header-top {
+        /* 구분하는 선은 hr보다 border를 조절해서 사용한다 */
+        border-bottom: 1px solid gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      ul {
+        display: flex;
+        gap: 10px;
+        padding: 0;
+
+        list-style: none;
+      }
+      ul a {
+        text-decoration: none;
+        font-size: 0.7em;
+        color: gray;
+      }
+      .header-top-left {
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-top">
+        <nav>
+          <ul class="header-top-left">
+            <li>
+              <a href=""><i class="fa-brands fa-instagram"></i> 인스타그램</a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-youtube"></i> 유튜브</a>
+            </li>
+            <li>
+              <a href=""><i class="fa-brands fa-facebook"></i> 페이스북</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div>
+          <img
+            src="https://www.lottecinema.co.kr/NLCHS/Content/images/common/logo.png"
+            alt="롯데시네마"
+          />
+        </div>
+
+        <nav>
+          <ul class="header-top-right">
+            <li><a href="">멤버십</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">단체관람/대관문의</a></li>
+            <li><a href="#">로그인</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display Layout</title>
+    <style>
+      h3 {
+        color: white;
+      }
+      div {
+        background-color: black;
+        margin: 0;
+      }
+      .d1 p {
+        margin: 0;
+        color: white;
+        border: 1px solid yellow;
+        width: 200px;
+        height: 250px;
+        display: inline-block;
+      }
+      .d2 .d2-1 {
+        display: flex;
+        gap: 20px;
+        /* align-items: center; */
+        justify-content: space-between;
+      }
+      /* flex설정 시 쓸 수 있는 프로퍼티:justify-content,align-items */
+
+      .d2 p {
+        width: 200px;
+        height: 250px;
+        border: 1px solid rgb(255, 0, 0);
+        color: white;
+      }
+      .d3 ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        gap: 10px;
+        justify-content: center;
+      }
+      .d3 li {
+        color: white;
+        border: 1px orange solid;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Display Layout Style</h1>
+    <div class="d1">
+      <h3>Layout1</h3>
+      <!-- p태그안의 내용은 문자하나로 보기때문에 p태그 공백 p태그가 있다면 랜더링될 떄 기본적인 공백이 생김 -->
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aliquid
+        natus, nisi, quam necessitatibus quis omnis officiis, quae ullam itaque
+        nihil reprehenderit aspernatur facere eius? Ducimus quam consectetur eum
+        incidunt.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aliquid
+        natus, nisi, quam necessitatibus quis omnis officiis, quae ullam itaque
+        nihil reprehenderit aspernatur facere eius? Ducimus quam consectetur eum
+        incidunt.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aliquid
+        natus, nisi, quam necessitatibus quis omnis officiis, quae ullam itaque
+        nihil reprehenderit aspernatur facere eius? Ducimus quam consectetur eum
+        incidunt.
+      </p>
+    </div>
+
+    <div class="d2">
+      <!-- display:flex를 사용할 땐 태그 내부의 태그들에게 적용하기 때문에 태그가 없을 시 적용안된디-->
+      <h3>Layout 2: flex 적용</h3>
+      <div class="d2-1">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+          ab hic? Itaque, deleniti ipsa enim veritatis asperiores veniam
+          perspiciatis iste adipisci quam cumque totam, tempora in ducimus
+          deserunt soluta mollitia?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+          ab hic? Itaque, deleniti ipsa enim veritatis asperiores veniam
+          perspiciatis iste adipisci quam cumque totam, tempora in ducimus
+          deserunt soluta mollitia?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae,
+          ab hic? Itaque, deleniti ipsa enim veritatis asperiores veniam
+          perspiciatis iste adipisci quam cumque totam, tempora in ducimus
+          deserunt soluta mollitia?
+        </p>
+      </div>
+    </div>
+    <div class="d3">
+      <h3>Layout3 : flex 적용</h3>
+      <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+        <li>Item5</li>
+      </ul>
+    </div>
+  </body>
+</html>

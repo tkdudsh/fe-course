@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px black solid;
+      }
+      .grid-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 2fr;
+
+        /* grid-template-columns: repeat(4, 1fr); */
+        gap: 20px;
+        justify-content: center;
+        align-items: end;
+        grid-template-rows: 100px auto;
+      }
+      img[alt="img1"],
+      img[alt="img2"] {
+        width: 100px;
+        height: 100px;
+      }
+      img[alt="img3"] {
+        width: 300px;
+      }
+      .list-grid-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        /* grid-template-columns 위에쓴 방식대로하면 fr당 한 열을 추가 함 1은 열의 크기를 나타냄   */
+        list-style: none;
+      }
+      .item-grid {
+        grid-column: span 3;
+        /* 1~3까지 column을 병합할 때 사용 */
+      }
+      li {
+        border: 1px black solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div>display grid layout</div>
+    <div class="grid-wrap">
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+      <div>1</div>
+    </div>
+    <ul class="list-grid-wrap">
+      <li class="item-grid">
+        <img src="../images/작고 검은여자.png" alt="img1" />
+      </li>
+      <li><img src="../images/작고 검은여자.png" alt="img2" /></li>
+      <li><img src="../images/호퍼스_1.jpg" alt="img3" /></li>
+      <li><img src="../images/작고 검은여자.png" alt="img2" /></li>
+      <li><img src="../images/호퍼스_1.jpg" alt="img3" /></li>
+      <li><img src="../images/작고 검은여자.png" alt="img2" /></li>
+      <li><img src="../images/호퍼스_1.jpg" alt="img3" /></li>
+    </ul>
+  </body>
+</html>
