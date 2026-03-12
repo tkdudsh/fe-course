@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logo Position</title>
+    <style>
+      .p {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        border: 1px black solid;
+        padding: 10px;
+      }
+      /* width를 100를 주고 padding을 주게 되면 화면이 넘어가기 때문에 boxsizing을 보더 박스로 해줌.
+      ( border box는 margin을 제외한 모든 속성을 계산하여 크기를 맞춤) */
+      p {
+        position: absolute;
+        top: 10px;
+        left: 100px;
+        border: 1px solid black;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Logo Position</h1>
+    <div class="p">
+      <img
+        src="https://www.starbucks.co.kr/common/img/common/logo.png"
+        alt=""
+      />
+      <p>StarBUCks COFfEe</p>
+    </div>
+  </body>
+</html>

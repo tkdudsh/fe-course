@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <style>
+      .slider-wrapper {
+        position: relative;
+        width: 80%;
+        height: 400px;
+        margin: auto;
+        border: 1px black solid;
+        text-align: center;
+      }
+      img {
+        width: 80%;
+        height: 400px;
+      }
+      button {
+        position: absolute;
+        top: 50%;
+      }
+      .btn-pre {
+        left: 10px;
+      }
+      .btn-next {
+        right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Slider</h1>
+    <div class="slider-wrapper">
+      <img src="../images/호퍼스_1.jpg" alt="" />
+      <button class="btn-pre">Prev</button>
+      <button class="btn-next">Next</button>
+    </div>
+  </body>
+</html>

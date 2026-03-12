@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Position</title>
+    <style>
+      .bg-wrap {
+        border: 1px solid orange;
+        width: 100%;
+        height: 200px;
+        background-image: url(../images/호퍼스_1.jpg);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        /* position 첫번째 인덱스는 top 두번째 인덱스는 bottom을 의미한다. 시작 기준점은 항상 왼쪽상단. */
+
+        background-size: auto;
+        /* background size의 속성으로 cover,contain,auto,length가 있다
+        cover: 가로세로 자동 확대하여 화면 크기에 맞춤
+        contain은 비율을 맞춰서 세로 높이에 맞춤. */
+      }
+      .banner {
+        width: 100%;
+        height: 32vw; /* viewport변환공식은 vw= (이미지 출력 높이px/해상도 너비)*100 (세로 비율 맞춰서 이미지 맞출 때 ) */
+        background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_bg_260220.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        /* 50% 50 % == center */
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Background Position</h1>
+    <div class="bg-wrap"></div>
+
+    <div class="banner"></div>
+  </body>
+</html>

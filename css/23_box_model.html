@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model</title>
+    <style>
+      div {
+        border: 3px solid orange;
+        margin: 10px;
+
+        /* margin은 시계방향으로 들어감 */
+      }
+      .d2 {
+        border: 3px solid brown;
+        overflow: hidden;
+      }
+      span {
+        padding: 10px;
+        background-color: peru;
+      }
+      .d2 span {
+        margin: 40px;
+        /* inline레벨은 마진 적용이 되지않는다 */
+      }
+
+      .padding {
+        /* padding: T(top) R(right) B(bottom) L(left) */
+        padding: 40px 40px;
+      }
+      .margin {
+        margin: 30px;
+      }
+      p {
+        border: 1px solid black;
+        margin: 0;
+      }
+      h3 {
+        border: 1px solid black;
+        margin: 0;
+      }
+      /* 블럭레벨인 div와 인라인레벨인 span을 단계적으로 쓰면 한줄을 차지하지 않는 인라인 레벨이 div영역을 침범하게 된다. */
+    </style>
+  </head>
+  <body>
+    <h1>Box Model Style :: padding,border,marign</h1>
+    <div class="d1">Box Model --Content</div>
+    <div class="d2"><span>Box Model --Content(Span)</span></div>
+    <div class="padding">
+      <h3>Padding</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam adipisci
+        neque maxime, quam reiciendis at ipsam molestiae pariatur, ea possimus
+        quod molestias laudantium ratione dolore harum facilis animi ut unde?
+      </p>
+    </div>
+    <div class="margin">
+      <h3>margin</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam adipisci
+        neque maxime, quam reiciendis at ipsam molestiae pariatur, ea possimus
+        quod molestias laudantium ratione dolore harum facilis animi ut unde?
+      </p>
+    </div>
+  </body>
+</html>

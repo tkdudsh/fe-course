@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Sizing</title>
+    <style>
+      /* div {
+        width: 300px;
+        height: 300px;
+      } */
+      .content-box {
+        border: 10px solid burlywood;
+        box-sizing: content-box;
+      }
+      /* width제외하고 300px임 */
+      .border-box {
+        border: 10px solid lightcoral;
+        box-sizing: border-box;
+      }
+      /* width 포함해서 300px임 */
+
+      .d1 {
+        width: 800px;
+        height: 200px;
+        margin: 100px 0px;
+        background-color: lightsalmon;
+        display: flex;
+        border: 3px solid brown;
+      }
+      /* p {
+        width: 400px;
+        height: 200px;
+        background-color: lightpink;
+        border: 10px solid lightskyblue;
+        box-sizing: border-box;
+        margin: 0;
+      } */
+      .d0 {
+        margin-top: 50px;
+        width: 400px;
+        height: 300px;
+        border: 1px solid gray;
+      }
+      p {
+        border-right: 10px solid darkblue;
+        padding: 30px;
+        margin: 30px;
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box Sizing</h1>
+    <div class="content-box">BoxSizing-content</div>
+    <div class="border-box">BoxSizing-border</div>
+
+    <!-- box sizing: content-box: width 값은 content 크기를 지정한것
+        box sizing : border-box: width 값은 border까지의 크기를 지정한것  -->
+
+    <div class="d0">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos maiores
+        illo alias esse rerum tempore quae voluptates quisquam fugit omnis,
+        dolor ut cupiditate velit laboriosam ab est placeat incidunt a!
+      </p>
+    </div>
+    <div class="d1">
+      <p class="p1">lorem</p>
+      <p class="p2">lorem</p>
+    </div>
+  </body>
+</html>
