@@ -18,10 +18,12 @@
     <style>
       * {
         font-family: "Nanum Gothic";
-        background-color: #f6f5ef;
+        /* background-color: #f6f5ef; */
+        margin: 0;
+        margin: 5px 0px;
       }
       header {
-        width: 1000px;
+        width: 80%;
         margin: auto;
         display: flex;
         justify-content: space-between;
@@ -62,6 +64,105 @@
       .header-menu-top li:last-child input {
         display: none;
       }
+      .banner {
+        width: 100%;
+        height: 32vw; /* viewport변환공식은 vw= (이미지 출력 높이px/해상도 너비)*100 (세로 비율 맞춰서 이미지 맞출 때 ) */
+        background-image: url("https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_bg_260220.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        /* 50% 50 % == center */
+        background-size: cover;
+        margin: 0;
+        position: relative;
+      }
+
+      .banner-font1 button {
+        position: absolute;
+        top: 63%;
+        left: 18%;
+        border-style: none;
+        background-color: #fcdde3;
+        border: 2px solid #b28bbd;
+        border-radius: 5px;
+        padding: 7px 13px;
+        color: #b28bbd;
+      }
+      .banner-font1 button:hover {
+        background-color: #b28bbd;
+        color: white;
+      }
+
+      .banner-font img {
+        width: 28vw;
+        position: absolute;
+        top: 35%;
+        left: 10%;
+      }
+      .drink-img img {
+        width: 12vw;
+      }
+
+      .img1 {
+        position: absolute;
+        top: 17%;
+        left: 40%;
+      }
+      .img2 {
+        position: absolute;
+        top: 27%;
+        left: 50%;
+      }
+      .img3 {
+        position: absolute;
+        top: 22%;
+        left: 58%;
+      }
+      .img4 {
+        position: absolute;
+        top: 17%;
+        left: 69%;
+      }
+      .img5 {
+        position: absolute;
+        top: 16%;
+        left: 79%;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .img1,
+      .img2,
+      .img3,
+      .img4,
+      .img5 {
+        animation: fadeInUp 1s ease forwards;
+      }
+      .banner-font {
+        animation-delay: 0s;
+      }
+      .img1 {
+        animation-delay: 0.5s;
+      }
+      .img2 {
+        animation-delay: 1s;
+      }
+      .img3 {
+        animation-delay: 1.5s;
+      }
+      .img4 {
+        animation-delay: 2s;
+      }
+      .img5 {
+        animation-delay: 2.5s;
+      }
     </style>
   </head>
   <body>
@@ -98,5 +199,51 @@
         </nav>
       </div>
     </header>
+    <main>
+      <div class="banner">
+        <div class="banner-font1">
+          <div class="banner-font">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_slogan_260220.png"
+              alt=""
+            />
+          </div>
+          <button>자세히보기</button>
+        </div>
+
+        <div class="drink-img">
+          <div class="img1">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_drink01_260220.png"
+              alt=""
+            />
+          </div>
+          <div class="img2">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_drink02_260220.png"
+              alt=""
+            />
+          </div>
+          <div class="img3">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_drink03_260220.png"
+              alt=""
+            />
+          </div>
+          <div class="img4">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_drink04_260220.png"
+              alt=""
+            />
+          </div>
+          <div class="img5">
+            <img
+              src="https://image.istarbucks.co.kr/upload/common/img/main/2026/2026_spring1_ph1_top_drink05_260220.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
