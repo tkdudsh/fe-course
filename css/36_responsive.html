@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <title>Responsive Style</title>
+    <style>
+      /* media query */
+      .header-toggle {
+        display: none;
+        color: lightpink;
+
+        /* right: 1rem; */
+      }
+
+      /* max-width는 이하일 때 나타나는 스타일, min width는 이상일 때 나타나는 스타일 */
+      @media screen and (max-width: 600px) {
+        /* 600px 이하일 때만 스타일이 적용 */
+        /* CSS Styling */
+        .wrapper {
+          background-color: peachpuff;
+        }
+        .wrapper main {
+          background-color: blue;
+        }
+
+        .header-toggle {
+          display: block;
+        }
+        .header-menu {
+          display: flex;
+          gap: 20;
+          justify-content: left;
+          border: 1px solid red;
+          list-style-type: none;
+          overflow: hidden;
+          padding: 0;
+          display: none;
+        }
+        .header-menu a {
+          padding: 1rem 1.5rem;
+          color: white;
+          background-color: lightblue;
+        }
+      }
+      @media screen and (min-width: 1001px) {
+        /* 1001px 이상일 때만 스타일이 적용 */
+        /* CSS Styling */
+        .wrapper {
+          background-color: peru;
+        }
+        .wrapper header {
+          background-color: brown;
+        }
+        .header-menu {
+          display: flex;
+          gap: 20;
+          justify-content: right;
+          border: 1px solid red;
+          list-style-type: none;
+          overflow: hidden;
+        }
+        .header-menu a {
+          padding: 1rem 1.5rem;
+          color: white;
+          background-color: lightcoral;
+        }
+      }
+      @media screen and (min-width: 601px) and (max-width: 1000px) {
+        .wrapper {
+          background-color: gray;
+          color: white;
+        }
+        .header-menu {
+          display: flex;
+          gap: 20;
+          justify-content: center;
+          border: 1px solid red;
+          list-style-type: none;
+          overflow: hidden;
+        }
+        .header-menu a {
+          padding: 1rem 1.5rem;
+          color: white;
+          background-color: black;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsive Style:: 반응형</h1>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <ul class="header-menu">
+            <li><a href="">로그인</a></li>
+            <li><a href="">회원가입</a></li>
+            <li><a href="">공지사항</a></li>
+            <li><a href="">게시판</a></li>
+          </ul>
+          <button class="header-toggle">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+      </header>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
