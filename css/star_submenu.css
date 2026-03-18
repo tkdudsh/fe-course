@@ -2,6 +2,13 @@
         font-family: "nbg";
         src: url("../fonts/NanumBarunGothic.eot");
       }
+
+      :root{
+
+        --max-size-container:1200px
+      }
+
+
       * {
         font-family: "맑은 고딕", "Nanum Gothic";
         /* background-color: rgb(246, 245, 239); */
@@ -9,24 +16,39 @@
         margin: 0;
         padding: 0;
       }
+      a{
+        text-decoration: none;
+      }
       header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
         /* border: 1px solid red; */
         font-family: "nbg";
-        width: 100%;
         background-color: rgb(246, 245, 239);
       }
+      main{
+        padding-top: 7.8rem;
+      }
+      .header-logo{
+        width: 75px;
+        height: 75px;
+      }
       .header-content {
-        width: 1200px;
-        margin: auto;
+        width: var(--max-size-container);
+        max-width: 100%;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         /* border: 2px solid red;  */
-        padding-top: 20px;
-        position: relative;
+        padding-top: 0.5rem;
+        position: relative; 
+        
       }
-      .header-menu {
-      }
+      
       .header-menu-top ul,
       .header-menu-bottom ul {
         display: flex;
@@ -96,7 +118,7 @@
       }
       .menu-link {
         display: block;
-        padding: 10px 15px 20px;
+        padding: 10px 15px 50px;
         color: #333;
         text-decoration: none;
         font-weight: 500;
@@ -110,3 +132,136 @@
       .menu-item:hover .submenu {
         display: block;
       }
+
+      /* 중간 공지사항 바 시작----------------------------------------------------------------------- */
+
+      .main-middle-bar{
+        display: flex;
+        width: 100%;
+        height: 4rem;
+      }
+      .main-middle-bar-left,
+      .main-middle-bar-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .main-middle-bar-left{
+        flex: 1.25;
+        background-color: #111111;
+        color:#fff ;
+        
+      }
+      .main-middle-bar-text{
+        display: flex;
+        gap: 1rem;
+        font-size: 0.8rem;
+      }
+      .main-middle-bar-text a{
+        color: #F5F4EF;
+      }
+      .middle-btn{
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid #fff;
+        border-radius: 100%;
+        background-color: #111111;
+        color: white;
+        position: absolute;
+        right: 2rem;
+      }
+      .main-middle-bar-right{
+        flex: 1;
+        background-color: #F5F4EF;
+        color: #111111;
+        font-size: 0.8rem;
+        gap: 1rem;
+      }
+      .main-middle-bar-right button{
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        border: #111111 solid 2px;
+        border-radius: 100%;
+        background-color: #F5F4EF;
+        color: #111111;
+        font-size: 0.8rem;
+        font-size: 1rem;
+        
+      }
+
+      /* 중간 공지사항 바 끝------------------------------------------------------------------------- */
+
+
+
+      /* 중간 리워드 바 시작------------------------------------------------------------------------- */
+
+      .main-middle-reward{
+        background-color: #1E3932;
+        display: flex;
+        justify-content: center;
+      }
+      .Reward-Logo{
+        width: 200px;
+        height: 200px;
+        padding-top: 2rem;
+        margin-right: 2rem;
+        text-align: center;
+
+      }
+      .middle-top-reward,
+      .middle-bottom-reward{
+        display: flex;
+        
+        padding: 2rem 0;
+      
+        font-size: 1rem;
+        color: #fff;
+        align-items: center;
+        justify-content: space-between;
+        
+        
+      }
+      .middle-top-reward{
+        border-bottom: 1px solid gray;
+      }
+    .middle-top-right{
+      position: relative;
+      top: 1.5rem;
+    }
+      
+      .middle-top-reward h3{
+        margin-bottom: 1rem;
+      }
+      .middle-top-reward h5{
+        font-size: .9rem;
+      }
+      .middle-bottom-reward p{
+        font-size: 0.8rem;
+      }
+      .reward-btn1{
+        background-color: #00704A;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        padding: 9px 14px;
+      }
+      .reward-btn2{
+        border: 2px solid   #fff;
+        color: #fff;
+        background-color: #1E3932;
+        padding: 7px 14px;
+        border-radius: 5px;
+      }
+      .mobile-card{
+        margin-left: 2rem;
+        border: 2px solid   #fff;
+        color: #fff;
+        background-color: #1E3932;
+        padding: 6px 4px;
+        border-radius: 5px;
+      }
+      /* 중간 리워드 바 끝------------------------------------------------------------------------- */
+
+
