@@ -66,6 +66,6 @@ console.log(yy,typeof yy)
 console.log(oo,typeof oo)
 // 데이터 타입 확인 및 비교
 console.log(typeof xx == typeof xxx)
-console.log(typeof xx == typeof yy)
-console.log(xx== yy)
-console.log(xx=== yy)
+console.log(typeof xx == typeof yy)//데이터 타입만 비교
+console.log(xx== yy)//값만 비교
+console.log(xx=== yy)//데이터 타입과 값을 비교한다.

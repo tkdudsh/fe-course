@@ -9,9 +9,7 @@ apple={
     'name':'사영노',
     'color':'blue',
     'img':'😁',
-    'age':23,
-
-
+    'age':23,  
 }
 console.log(typeof apple,apple)
 console.log(apple.name)
