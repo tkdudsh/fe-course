@@ -16,7 +16,7 @@
  * }
  * 
  * 3. 자바스크립트 엔진에는 빌트인 함수(내장 함수)가 포함되어 있음.
- * parseInt(),parseDouble()..
+ * parseInt(),parseFloat()..
  * 
  * 4. 함수 호출 : 함수명(파라미터);
  * 
@@ -44,8 +44,6 @@ console.log(num2,typeof num2)
 
 //일반함수 선언
 
-func_sum()
-
 function func_sum(){
     console.log(10+20);
     
@@ -60,5 +58,7 @@ const arrow_sum=()=>{
 
 //함수 호출
 
+func_sum()// 일반 함수는 위치 상관없이 배치하여도 상관없어진다
+arrow_sum()//arrow함수는 인터프리터 동작으로 선언 후 배치되어야 함.
 
-arrow_sum()
+// ddd
