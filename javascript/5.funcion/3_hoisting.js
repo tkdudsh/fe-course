@@ -16,6 +16,8 @@ function test2(){
 //반드시 함수 실행 후 호출 되어야 한다.
 
 
+
+//test3,4는 호이스팅 안됨.  
 const test3=()=>{
     console.log(`---> test3`)
 }

@@ -54,7 +54,7 @@ function func_sum(){
 
 const arrow_sum=()=>{
     console.log(10+20);
-}
+} 
 
 //함수 호출
 

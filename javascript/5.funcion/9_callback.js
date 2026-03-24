@@ -19,5 +19,5 @@ console.log('로그출력 1');
 setTimeout(()=>{console.log('settime 실행결과')},1000);//1초 후에 입력한 콜백함수를 실행하는 함
 
 console.log('로그출력2');
-
+ 
 
