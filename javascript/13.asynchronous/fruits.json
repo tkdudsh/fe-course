@@ -1,0 +1,24 @@
+{
+    "title" : "🍎🍏🍋 Fruits List",
+    "list" :[
+
+        {
+        "name":"apple",
+        "color":"red",
+        "emoji":"🍎"
+    },
+    {
+        "name":"apple2",
+        "color":"red2",
+        "emoji":"🍎"
+    },
+    {
+        "name":"apple3",
+        "color":"red3",
+        "emoji":"🍎"
+    }
+
+    ]
+}
+
+

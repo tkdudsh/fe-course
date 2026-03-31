@@ -1,0 +1,28 @@
+{
+
+    "title":"👵🏾 Good ComPany",
+
+    "list":[
+
+        {
+            "name":"찰리",
+            "age":52,
+            "department":"나라씨"
+        },
+        {
+            "name":"뽀꿀롬",
+            "age":29,
+            "department":"도라이버"
+        },
+        {
+            "name":"존",
+            "age":81,
+            "department":"야가다"
+        },
+        {
+            "name":"데이빗",
+            "age":72,
+            "department":"감독"
+        }
+    ]
+}
