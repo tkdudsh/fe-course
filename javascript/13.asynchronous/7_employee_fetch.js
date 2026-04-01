@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded',()=>{
 const dataUrl='http://127.0.0.1:5500/javascript/13.asynchronous/employee.json'
 
 const getJson= async ()=>{
-    let res=await fetch(dataUrl)
+    let res=await fetch(dataUrl)// await를 붙이지 않으면 return문부터 실행됨.
     return res.json()
 }
 
@@ -13,13 +13,13 @@ const showJson=async ()=>{
     let jsonData=await getJson();
 
     let output=`
-
+  
     <h1>${jsonData.title}</h1>
 
 
     <table border="1">
       <tr>
-        <th>Num</th>
+        <th>No</th>
         <th>Name</th>
         <th>Color</th>
         <th>Emoji</th>
