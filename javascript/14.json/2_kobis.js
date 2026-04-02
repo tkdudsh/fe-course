@@ -49,6 +49,7 @@ const openModal = (infoObj) => {
     modalBody.innerHTML = output;
 }
 
+//정보들 갖고오기
 const handleMovieInfo = async (movieCd, rank, poster, posterObj) => {
     let info = await getMovieInfo(movieCd);
     let movieNm = info.movieInfoResult.movieInfo.movieNm;
