@@ -1,66 +1,86 @@
-window.addEventListener('DOMContentLoaded',()=>{
-    let search_content = document.querySelector('#search_content')
-    let btnSearch=document.querySelector('#btnSearch')
+/**
+ * DOM 객체 생성 후 객체 호출
+ */
+window.addEventListener('DOMContentLoaded', () => {
+    /** 검색하기 버튼 이벤트 */
+    let search_content = document.querySelector('#search_content');
+    let btnSearch = document.querySelector('#btnSearch');
 
-
-    btnSearch.addEventListener('click',()=>{
-        if(search_content.ariaValueMax.trim()==''){
-            alert('검색할 내용을 입력하세요')
-            search_content.focus()
-        }
-        else{
+    btnSearch.addEventListener('click', () => {
+        if(search_content.value.trim() === '') {
+            alert('검색할 내용을 입력해주세요');
+            search_content.focus();
+        } else {
             //검색 진행
         }
-    })
-    createTable()
-})
+    });
 
+    filterMenu('all');  //맨 처음 호출되는 테이블
 
-async function getJson (){
-    let response=await fetch("../data/support.json");
+    let menuList = document.querySelectorAll('.filter-menu li a');
+    menuList.forEach(menu => {
+        menu.addEventListener('click', () => {
+            filterMenu(menu.id);
+        });
+    });
+    
+}); //window event
+
+//filterMenu 함수 생성
+async function filterMenu(type) {
+    let filterList = null;
+    if(type === 'all') {
+        filterList = await getJson();
+    } else {
+        filterList = await filterData(type);
+    }    
+    createTable(filterList);
+}
+
+//filterData 함수 생성
+async function filterData(type) {
+    let data = await getJson();
+    return data.filter(item => item.type === type);
+}
+
+//support.json JSON 데이터 가져오기
+async function getJson() {
+    let response = await fetch("../data/support.json");
     return response.json();
 }
 
-async function createTable(){
-    let list =await getJson();
-    console.log(list)
-
-
-    let output=`
-    <table>
+async function createTable(list) {
+    let output = `
+        <table id='stable'>
             <thead>
-              <tr>
-                <th>번호</th>
-                <th>구분</th>
-                <th>제목</th>
-                <th>등록일</th>
-                <th>조회수</th>
-              </tr>
+                <tr>
+                    <th>번호</th>
+                    <th>구분</th>
+                    <th>제목</th>
+                    <th>등록일</th>
+                    <th>조회수</th>
+                </tr>
             </thead>
             <tbody>
-             ${
-                list.map((item,idx)=>`
-                
+            ${
+                list.map((item, idx) => `
                     <tr>
-                    <td>${idx+1}</td>
-                    <td>${item.type}</td>
-                    <td>${item.title}</td>
-                    <td>${item.rdate}</td>
-                    <td>${item.hits}</td>
-                </tr>
-                `).join('')
-             }
+                        <td>${idx+1}</td>
+                        <td>${item.type}</td>
+                        <td>${item.title}</td>
+                        <td>${item.rdate}</td>
+                        <td>${item.hits}</td>
+                    </tr>
+                `).join("")
+            }
             </tbody>
             <tfoot>
-              <tr>
-                <td colspan="5">1 2 3 4 5 >></td>
-              </tr>
+                <tr>
+                    <td colspan="5">1 2 3 4 5  >></td>
+                </tr>
             </tfoot>
-    </table>
-    `
-
-    document.querySelector('#before-table').insertAdjacentHTML('afterend',output)
+        </table>
+    `;
+    document.querySelector('#stable')?.remove();
+    document.querySelector('#before-table').insertAdjacentHTML('afterEnd', output);
 }
-
-
-
