@@ -1,0 +1,22 @@
+
+.menu1{
+    padding: 5px 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    background-color: lightblue;
+    margin: 1px;
+}
+.menu2{
+    padding: 5px 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    background-color: lightcoral;
+    margin: 1px;
+}
+.menu3{
+    padding: 5px 10px;
+    border: 1px solid black;
+    text-decoration: none;
+    background-color: lightgreen;
+    margin: 1px;
+}
