@@ -1,22 +1,19 @@
-
-.menu1{
-    padding: 5px 10px;
-    border: 1px solid black;
-    text-decoration: none;
-    background-color: lightblue;
-    margin: 1px;
+.menu_list {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
 }
-.menu2{
+.menu1 {
+    border: 1px solid gray;
     padding: 5px 10px;
-    border: 1px solid black;
     text-decoration: none;
-    background-color: lightcoral;
-    margin: 1px;
+    background-color: antiquewhite;
+    color: #000;
 }
-.menu3{
+.menu2 {
+    border: 1px solid gray;
     padding: 5px 10px;
-    border: 1px solid black;
     text-decoration: none;
-    background-color: lightgreen;
-    margin: 1px;
+    background-color: tomato;
+    color: #fff;
 }
