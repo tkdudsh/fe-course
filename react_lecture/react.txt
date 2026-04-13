@@ -203,4 +203,8 @@
         }
 
         <button type='button' name="버튼1" onClick={handleClick}/>
+
         <button type='button' name="버튼1" onClick={(e)=>{ console.log(e.target)}}/>
+
+9. 상태관리(State) -useState           
+    
