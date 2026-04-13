@@ -1,16 +1,13 @@
-import { useRef, useState } from 'react';
 
-export default function TextInput({item,handleChange}) {
-    const {type,name}=item;
-
+export default function TextInput({ item, value, handleChange, inputRef }) {
+    const { type, name } = item;
     return (
-        <input type={text}
-        id={name}
-        name={name}
-        value={value}
-        onChange={handleChange}
-        // ref={refs.addressRef}
-        ></input>
+        <input  type={type}
+                id={name} 
+                name={name}
+                value={value}
+                onChange={(e)=>{ handleChange(e)}}
+                ref={inputRef}
+            />
     )
-    
 }
