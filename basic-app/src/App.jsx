@@ -1,35 +1,42 @@
-import AvatarImage from "./componenets/avatar/AvatarImage.jsx"
+import AvatarImage from "./components/avatar/AvatarImage.jsx"
+import AvatarImageList from "./components/avatar/AvatarImageList.jsx"
+import Avatar from "./components/avatar/Avatar.jsx"
+import AvatarList from "./components/avatar/AvatarList.jsx"
+import style from './components/avatar/Avatar.module.css';
+import MenuList from './components/menu/MenuList.jsx';
+import mstyle from './components/menu/Menu.module.css';
 import people1 from './assets/people1.webp';
 import people2 from './assets/people2.webp';
 import people3 from './assets/people3.webp';
-import Menu from './componenets/menu/Menu.jsx'
-import style from './componenets/avatar/Avatar.module.css'
-import Avatar from "./componenets/avatar/Avatar.jsx";
-import AvatarList from "./componenets/avatar/AvatarList.jsx";
-import AvatarImageList from "./componenets/avatar/AvatarImageList.jsx"
 
 export default function App() {
-  
-  const list=[
-    {img:people1},
-    {img:people2},
-    {img:people3}
+  const list = [
+    {img: people1, style:style.avatar_img},
+    {img: people2, style:style.avatar_img},
+    {img: people3, style:style.avatar_img_circle},
+    {img: people3, style:style.avatar_img}
   ]
-  const alist=[
-    {img:people1,name:"winston"},
-    {img:people2,name:"anae"},
-    {img:people3,name:'akak'}
+  const alist = [
+    {img: people1, name: "Smith" },
+    {img: people2, name: "James"},
+    {img: people3, name: "Anne"},
+    {img: people3, name: "Anne"}
+  ]
+  const mlist = [
+    {title: "멤버십", href: "#", style: mstyle.menu1},
+    {title: "고객센터", href: "#", style: mstyle.menu1},
+    {title: "단체관람/대관문의", href: "#", style: mstyle.menu1},
+    {title: "로그인", href: "#", style: mstyle.menu1},
   ]
 
   return ( 
     <>
-    {/* <AvatarImageList imgList={list}></AvatarImageList> */}
-    <AvatarList list={alist}></AvatarList>
-<AvatarImage img={people1} style={style.avatar_img_circle}></AvatarImage>
-      {/* <Avatar img={people1} name='보글럼'></Avatar>
-      <Avatar img={people2} name='윈스턴'></Avatar> */}
-
+      <AvatarImage img={people1} style={style.avatar_img}/>
+      <Avatar name="Anne" img={people3} />
+      <AvatarImageList imgList={list} />
+      <AvatarList list={alist} />
     </>
   )
 }
+
 

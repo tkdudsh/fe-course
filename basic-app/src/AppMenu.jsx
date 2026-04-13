@@ -1,8 +1,6 @@
-import Menu from "./componenets/menu/Menu.jsx"
-import MenuList from "./componenets/menu/MenuList.jsx"
-import style from "./componenets/menu/Menu.module.css"
-import Button from "./componenets/button/Button.jsx"
-import AppButton from "./AppButton.jsx"
+import Menu from "./components/menu/Menu.jsx"
+import MenuList from "./components/menu/MenuList.jsx"
+import style from "./components/menu/Menu.module.css"
 
 export default function App() {
     const list = [
@@ -34,8 +32,6 @@ export default function App() {
             </div>
             <MenuList list={list} />
             <MenuList list={list2} />
-            <AppButton></AppButton>
-            
         </>
     )
 }

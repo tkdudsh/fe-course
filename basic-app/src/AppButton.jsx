@@ -1,13 +1,29 @@
-import Button from "./componenets/button/Button.jsx";
+import Button from './components/button/Button.jsx';
 
 export default function App() {
-  return (
-    <Button
-      type="button"
-      name="버튼1"
-      w="100px"
-      h="50px"
-      bg="blue"
-    />
-  );
+    const stylesObj = {
+        w: "100px",
+        h: "50px",
+        bg: "aqua",
+        color:"#000"
+    }
+    const stylesObj2 = {
+        w: "200px",
+        h: "50px",
+        bg: "tomato",
+        color:"white"
+    }
+
+    return (
+        <>
+            <Button type="button"
+                    name="버튼1"
+                    styles={stylesObj} 
+                    />
+            <Button type="submit"
+                    name="회원가입"
+                    styles={stylesObj2}
+                    />
+        </>
+    )
 }
