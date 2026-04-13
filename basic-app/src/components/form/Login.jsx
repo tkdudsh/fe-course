@@ -38,8 +38,8 @@ export default function Login() {
                                 value={form.id}
                                 ref={idRef}
                                 onChange={handleFormChange}/>
-                    </li>
-                    <li>
+                    </li> 
+                    <li> 
                         <label htmlFor="pwd">패스워드</label>
                         <input  type="password" 
                                 id="pwd" 
