@@ -49,7 +49,7 @@ export default function UserInfo() {
                     )}                   
                     <li>
                         <button type="submit">전송</button>
-                        <button type="button" 
+                        <button type= "button" 
                                 onClick={()=> setForm({name:'', age:'', address:'', job:''})}>다시쓰기</button>
                     </li>
                     
