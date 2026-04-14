@@ -1,0 +1,38 @@
+
+    {
+        "roomList":[
+            {
+                "pk":"1",
+                "img":"https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ3MTY3NjExNzY1ODY5NTI3NA==/original/7caec6e9-3eba-4bb7-8454-1d4dea2b3603.jpeg?im_w=720",
+                    "roomTitle":"부산의집",
+                    "roomDate":"5월 8일 ~ 10일",
+                    "roomPrice":"572,000",
+                    "roomRating":"5.0",
+                    "isGuest":false,
+                    "isLike":true
+
+            },
+            {
+                "pk":"2",
+                "img":"https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ3MTY3NjExNzY1ODY5NTI3NA==/original/7caec6e9-3eba-4bb7-8454-1d4dea2b3603.jpeg?im_w=720",
+                    "roomTitle":"서울의집",
+                    "roomDate":"5월 8일 ~ 10일",
+                    "roomPrice":"572,000",
+                    "roomRating":"5.0",
+                    "isGuest":true,
+                    "isLike":false
+
+            },
+            {
+                "pk":"3",
+                "img":"https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQ3MTY3NjExNzY1ODY5NTI3NA==/original/7caec6e9-3eba-4bb7-8454-1d4dea2b3603.jpeg?im_w=720",
+                    "roomTitle":"속초의집",
+                    "roomDate":"5월 8일 ~ 10일",
+                    "roomPrice":"572,000",
+                    "roomRating":"5.0",
+                    "isGuest":true,
+                    "isLike":true
+
+            }
+        ]
+    }

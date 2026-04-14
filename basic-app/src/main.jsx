@@ -7,7 +7,8 @@ import { createRoot } from 'react-dom/client'
 // import App from './AppCommon.jsx'
 // import App from './AppCounter.jsx'
 // import App from './AppForm.jsx'
-import App from './AppEffects'
+// import App from './AppEffects'
+import App from './AppAirbnb'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
