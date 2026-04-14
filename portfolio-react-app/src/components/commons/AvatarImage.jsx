@@ -1,5 +1,7 @@
-export default function AvatarImage({img,alt,style}){
-    return(
-        <img img={img} alt={alt} className={style}/>
+export default function AvatarImage({img, alt, style}) {
+    return (
+        <img    src={img} 
+                alt={alt}
+                className={style} />
     )
 }
