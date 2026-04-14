@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="portfolio-static" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <title>portfolio-static</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-logo">
+        <img class="header-logo-img" src="images/favicon.ico" alt="logo" />
+        <h1 class="header-logo-title">Judy</h1>
+      </div>
+      <nav>
+        <ul class="header-menu">
+          <li><a href="#home" class="header-menu-items active">Home</a></li>
+          <li><a href="#About" class="header-menu-items">About</a></li>
+          <li><a href="#Skills" class="header-menu-items">Skills</a></li>
+          <li><a href="#My work" class="header-menu-items">My work</a></li>
+          <li>
+            <a href="#Testimonial" class="header-menu-items">Testimonial</a>
+          </li>
+          <li><a href="#contact" class="header-menu-items">contact</a></li>
+        </ul>
+        <button class="header-toggle"><i class="fa-solid fa-bars"></i></button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home">
+        <img src="images/favicon.ico" alt="home profile" class="home-avatar" />
+        <h2 class="home-title">
+          Hello<br />I'm
+          <strong class="home-title-strong">Junior Developer</strong>,Judy
+        </h2>
+        <p class="home-description">
+          A software engineer currently residing in Seoul,South Korea
+        </p>
+        <a class="home-contact" href="#">Contact me</a>
+      </section>
+
+      <section id="about" class="section container">
+        <h2 class="title">About me</h2>
+        <p class="description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+          hic quaerat ea dolor nulla optio molestias animi velit! Quia, at ipsum
+          hic architecto non libero cupiditate illo sapiente natus in.
+        </p>
+        <ul class="majors">
+          <li class="major">
+            <i class="fa-brands fa-html5 major-icon"></i>
+            <p class="major-title">Front-end</p>
+            <p>HTML, CSS, JavaScript, TypeScript, React, WebAPIs</p>
+          </li>
+          <li class="major">
+            <i class="fa-solid fa-mobile major-icon"></i>
+            <p class="major-title">Mobile</p>
+            <p>Android Studio, React Native, IOS, Swift, Jav, Kotlin</p>
+          </li>
+          <li class="major">
+            <i class="fa-solid fa-server major-icon"></i>
+            <p class="major-title">Back-end</p>
+            <p>Java, JavaScript, Go, Kotlin, Spring, Spring Boot</p>
+          </li>
+        </ul>
+        <ul class="jobs">
+          <li class="job">
+            <img src="images/jobs/google.png" alt="" />
+            <div>
+              <p class="job-name">Google as Juinor Software Engineer</p>
+              <p class="job-period">2019 Oct - Until now</p>
+            </div>
+          </li>
+          <li class="job">
+            <img src="images/jobs/samsung.png" alt="" />
+            <div>
+              <p class="job-name">Samsung as Juinor Software Engineer</p>
+              <p class="job-period">2010 Oct - 2019 Oct</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section id="skills" class="section container">
+        <h2 class="title">My Skills</h2>
+        <p class="description">Skills & Attributes</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim
+          minima recusandae, aliquam distinctio temporibus, facere porro
+          quaerat, dolore officiis animi doloremque corporis nemo dolores
+          perspiciatis sunt possimus voluptas ad.
+        </p>
+        <div class="skills">
+          <article class="skills-coding">
+            <h3 class="skills-title">Coding Skills</h3>
+            <ul>
+              <li class="bar">
+                <div class="bar-title"><span>HTML</span> <span>98%</span></div>
+                <div class="bar-bg"><div class="bar-value html"></div></div>
+              </li>
+              <li class="bar">
+                <div class="bar-title"><span>CSS</span> <span>90%</span></div>
+                <div class="bar-bg"><div class="bar-value css"></div></div>
+              </li>
+              <li class="bar">
+                <div class="bar-title">
+                  <span>JAVASCRIPT</span> <span>90%</span>
+                </div>
+                <div class="bar-bg">
+                  <div class="bar-value javascript"></div>
+                </div>
+              </li>
+              <li class="bar">
+                <div class="bar-title">
+                  <span>TYPESCRIPT</span> <span>80%</span>
+                </div>
+                <div class="bar-bg">
+                  <div class="bar-value typescript"></div>
+                </div>
+              </li>
+              <li class="bar">
+                <div class="bar-title"><span>REACT</span> <span>79%</span></div>
+                <div class="bar-bg"><div class="bar-value react"></div></div>
+              </li>
+              <li class="bar">
+                <div class="bar-title">
+                  <span>NODE.JS</span> <span>68%</span>
+                </div>
+                <div class="bar-bg"><div class="bar-value nodejs"></div></div>
+              </li>
+            </ul>
+          </article>
+          <article class="skills-tool">
+            <h3 class="skills-title">Tools</h3>
+            <ul>
+              <li>Visual Studio</li>
+              <li>Intellij</li>
+              <li>Android Studio</li>
+              <li>Eclipse</li>
+              <li>MySQL Workbench</li>
+            </ul>
+          </article>
+          <article class="skills-etc">
+            <h3 class="skills-title">Etc</h3>
+            <ul>
+              <li>Git</li>
+              <li>Scrum Master</li>
+              <li>SVN</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="work" class="section container">
+        <h2 class="title">My Work</h2>
+        <p class="description">Projects</p>
+        <ul class="categories">
+          <li>
+            <button class="category">
+              All<span class="category-count">8</span>
+            </button>
+          </li>
+          <li>
+            <button class="category">
+              Front-end<span class="category-count">4</span>
+            </button>
+          </li>
+          <li>
+            <button class="category">
+              Back-end<span class="category-count">2</span>
+            </button>
+          </li>
+          <li>
+            <button class="category">
+              Mobile<span class="category-count">2</span>
+            </button>
+          </li>
+        </ul>
+        <ul class="projects">
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project1.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project2.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project3.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project4.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project5.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project6.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project7.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+          <li class="project">
+            <img
+              class="project-img"
+              src="images/projects/project8.webp"
+              alt="project-img"
+            />
+            <div class="project-meta">
+              <h3 class="project-meta-title">Proejct#1</h3>
+              <p>Clone Coding with HTML</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <section id="testimonial" class="section container">
+        <h2 class="title">Testimonial</h2>
+        <p class="description">See What they say about me</p>
+        <ul class="testimonials">
+          <li class="testimonial">
+            <img
+              class="testimonial-img"
+              src="images/testimonials/people1.webp"
+              alt=""
+            />
+            <div class="testimonial-text">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
+                fugit ducimus blanditiis dolorem neque sint voluptatibus quis
+                fuga, non recusandae rerum, commodi error, doloribus voluptatum
+                impedit quaerat. Tempora, facilis hic!
+              </p>
+              <p><a href="#" class="testimonial-text-name">James Kim</a></p>
+            </div>
+          </li>
+          <li class="testimonial">
+            <img
+              class="testimonial-img"
+              src="images/testimonials/people2.webp"
+              alt=""
+            />
+            <div class="testimonial-text">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
+                fugit ducimus blanditiis dolorem neque sint voluptatibus quis
+                fuga, non recusandae rerum, commodi error, doloribus voluptatum
+                impedit quaerat. Tempora, facilis hic!
+              </p>
+              <p><a href="#" class="testimonial-text-name">Smith Kim</a></p>
+            </div>
+          </li>
+          <li class="testimonial">
+            <img
+              class="testimonial-img"
+              src="images/testimonials/people3.webp"
+              alt=""
+            />
+            <div class="testimonial-text">
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero
+                fugit ducimus blanditiis dolorem neque sint voluptatibus quis
+                fuga, non recusandae rerum, commodi error, doloribus voluptatum
+                impedit quaerat. Tempora, facilis hic!
+              </p>
+              <p><a href="#" class="testimonial-text-name">Anna Kim</a></p>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <!--- Arrow Top-->
+      <aside>
+        <a href="#" class="arrow-up"><i class="fa-solid fa-arrow-up"></i></a>
+      </aside>
+    </main>
+    <footer id="contact" class="footer">
+      <h2 class="title">Let's Talk</h2>
+      <p class="description">com.developer.judy@gmail.com</p>
+      <ul class="contact-links">
+        <li>
+          <a href="#" class="contact-link"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#" class="contact-link"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+      <p>Junior Software Engineer Judy's Porfolio</p>
+    </footer>
+  </body>
+</html>
