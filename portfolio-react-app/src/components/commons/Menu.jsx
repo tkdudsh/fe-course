@@ -4,4 +4,4 @@ export default function Menu({href, style, name, click}) {
             className={style}
             onClick={()=> click(name)}>{name}</a>
     )
-}
+}  
