@@ -20,8 +20,8 @@ export default function App() {
 
   return (
     <>
-    <Header data={data.header}></Header>
-    <Content></Content>
+    <Header data={data?.header}></Header>
+    <Content data={data?.content}></Content>
     <Footer></Footer>
     </>
   )
