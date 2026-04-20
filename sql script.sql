@@ -48,22 +48,32 @@ SELECT EMP_ID, EMP_NAME FROM EMPLOYEE;
 SELECT * FROM EMPLOYEE;
 SELECT EMP_NAME, GENDER, HIRE_DATE FROM EMPLOYEE;
 
+
+
 -- 사원테이블의 사번, 사원명, 성별, 입사일, 급여를 조회
 
-
+select emp_id,emp_name,emp_gender,emp_hire_date,salary from employee;
+SELECT EMP_ID, EMP_NAME,GENDER,HIRE_DATE FROM EMPLOYEE;
 -- 부서테이블의 모든 정보 조회
+
+SELECT * FROM department;
+
 
 
 -- AS  : 컬럼명 별칭 부여 
 -- 형식> SELECT [컬럼명 as 별칭, ...] FROM [테이블명];
 -- 사원테이블의 사번, 사원명, 성별, 입사일, 급여 컬럼을 조회한 한글 컬럼명으로 출력
-
+select emp_id as 사번 from employee;
+select emp_id 사번 from employee;
+select emp_name as 사원명 ,
+	hire_date as 입사일,
+    salary as 급여 from employee;
 
 -- 사원테이블의 ID, NAME, GENDER, HDATE, SALARY 컬럼명으로 조회
 
 
 -- 사원테이블의 사번, 사원명, 부서명, 폰번호, 이메일, 급여, 보너스(급여*10%)를 조회
--- 기존의 컬럼에 연산을 수행하여 새로운 컬럼을 생성할 수 있다!!
+-- 기존의 컬럼에 연산을 수행하여 새로운 컬럼을 생성할 수 있다!!   `    
 
 
 -- 현재 날짜를 조회 : CURDATE()
@@ -75,7 +85,7 @@ SELECT EMP_NAME, GENDER, HIRE_DATE FROM EMPLOYEE;
 			FROM [테이블명]
             WHERE [조건절];		 
 ***************************************/
--- 정주고 사원의 정보를 조회
+-- 정주고 사원의 정보를 조회1
 
 
 -- SYS 부서에 속한 모든 사원을 조회 
@@ -136,7 +146,7 @@ SELECT EMP_ID, EMP_NAME, IFNULL(ENG_NAME, 'SMITH') AS ENG_NAME, HIRE_DATE, SALAR
 FROM EMPLOYEE;
 
 -- MKT 부서의 사원들을 조회, 재직중인 사원들의 RETIRE_DATE 컬럼은 현재 날짜로 치환
-
+select  EMP_ID, EMP_NAME  from employee where dept_id='mkt'
 /**************************************
 	DISTINCT  : 중복된 데이터를 배제하고 조회
     형식> SELECT DISTINCT [컬럼리스트] ~				
@@ -148,31 +158,35 @@ FROM EMPLOYEE;
 
 
 /**************************************
-	ORDER BY 컬럼 : 데이터 정렬 
-    형식> SELECT [컬럼리스트] 
-			FROM [테이블]
-            WHERE [조건절]
-		 ORDER BY [컬럼명, ...] ASC/DESC
+	--ORDER BY 컬럼 : 데이터 정렬 
+    --형식> SELECT [컬럼리스트] 
+		--	FROM [테이블]
+          --  WHERE [조건절]
+		 --ORDER BY [컬럼명, ...] ASC/DESC
 ***************************************/
 
 -- 급여를 기준으로 오름차순 정렬
 
+SELECT * from employee order by salary desc;
 
 -- 모든 사원을 급여, 성별을 기준으로 오름차순 정렬
 
+Select * from employee order by salary, gender asc;
 
 -- ENG_NAME이 널인 사원들을 입사일 기준으로 내림차순 정렬
 
-
+select eng_name is null from employee order by hire_date desc;
 -- 퇴직한 사원들을 급여기준으로 내림차순 정렬
 
 
 -- 퇴직한 사원들을 급여기준으로 내림차순 정렬, SALARY 컬럼을 '급여' 별칭으로 치환
+select emp_id,emp_name,hire_date,retire_date,salary as '급여' from employee order by salary desc;
 -- '급여' 별칭으로 ORDER BY가 가능할까요???  :: 별칭으로 ORDER BY 가능함
 --  WHERE 조건절 데이터 탐색 > 컬럼리스트 > 정렬
 
 
 -- 정보시스템(SYS) 부서 사원들 중 입사일이 빠른 순서, 급여를 많이 받는 순서로 정렬
+select emp_id,emp_name,hire_date as '입사입',salary as '급여' from employee where dept_id='sys' order by '입사일' asc, '급여' desc;
 -- HIRE_DATE, SALARY 컬럼은 '입사일','급여' 별칭으로 컬럼리스트 생성 후 정렬
 
 
