@@ -379,7 +379,12 @@ select sum(salary) from employee;
 -- 2.avg: 전체 평균을 구하는 함수
 -- 사원들의 전체 급여 평균을 조회, 3자리씩 ','로 구분하고 앞에 '$' 표시
 -- 2026-04-21 기준 급여가 null이면 0으로 기본값 정의, 소수점은 절삭
+select concat('$ ',format(floor(avg(ifnull(salary,0))),0)) as 평균 from employee;
 
+-- 정보시스템 부서 전체의 급여 총액과 평균을 조회
+-- 3자리 구분, 마지막 '만원' 표시
+
+select concat(format(sum(salary),0),'만원') as 합계,concat(format(floor(avg(ifnull(salary,0))),0),'만원') as 평균 from employee where dept_id='sys';
 
 
 
