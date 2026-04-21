@@ -317,7 +317,69 @@ select substring('대한민국 만세',1,4) as str1 from dual;
 select emp_id,emp_name,substring(hire_date,1,4) as 입사년도 from employee;
 
 select* from employee where substring( hire_date,1,4)='2015';
-select * from emplyee where dept_id="SYS" and substring(hire_date,1,4)='2018';
+select * from employee where dept_id="SYS" and substring(hire_date,1,4)='2018';
+
+select left(curdate(),4)as year, substring(curdate(),6,2)as month, right(curdate(),2)as day from dual;
+
+select * from employee where left(hire_date,4) ='2018';
+-- 사원번호, 사원명, 입사일, 폰번호, 급여를 조회/ 폰번호는 마지막 4자리만 출력
+
+-- 4 upper(문자열), lower(문자열): 대소문자로 치환
+
+select upper('welcomeTosql') as upper, lower('welcomeToSql') as lower from dual;
+
+select * from employee;
+select emp_id,emp_name,upper(eng_name) as eng_name ,lower(dept_id)as dept_id from employee;
+
+-- 5 trim(문자열): 앞,뒤 공백 제거.
+
+
+-- 6 format(문자열, 소수점 자리) : 문자열 포맷 
+select format(123456,0) as format1,
+		format('123456',0) as format2
+        from dual;
+        
+        
+select emp_id,emp_name,hire_date,phone,format(ifnull(salary,0),0) as salary,format(salary*0.2,0) as bonus from employee
+where substring(hire_date,1,4) between '2016' and '2017' order by emp_id desc;
+
+-- 날짜 함수
+-- curdate() : 년-월-일 형식으로 현재날짜 출력
+select curdate() as today from dual;
+
+-- 형변환 함수
+-- cast(변환값 as 데이터타입)
+-- convert(변환값 as 데이터타입)
+select 123 as number , cast(123 as char) as str from dual;
+
+-- signed integer, unsigned integer
+select '1234' as string, cast('1234' as signed integer) as cast_int, cast('1234' as unsigned integer) as cast_int from dual;
+
+-- replace(문자열, old ,new)
+select '홍-길-동' as old, replace('홍-길-동','-','/') as new from dual;
+
+select emp_id,emp_name,replace(hire_date,'-','/')as hire_date,replace(ifnull(retire_date,curdate()),'-','/') as retire_date,dept_id,phone,format(salary,0) as salary from employee;
+ 
+select * from employee where hire_date >= cast('20150101' as date);
+
+select * from employee where hire_date between cast('20150101'as date) and cast('20171231'as date);
+
+/********************************
+집계 함수 : sum(),avg(),count(),min(),max()...
+호출되는 위치 - [컬럼리스트],[조건절의 컬럼명]
+group by - 그룹함수를 적용하기 위한 그룹핑 컬럼 정의
+having - 그룹함수에서 사용하는 조건절
+** 그룹함수는 그룹핑이 가능한 컬럼에 적용하는 것이 굿~
+*********************************/
+
+select * from employee;
+-- 1 sum: 전체 총합을 구하는 함수
+select sum(salary) from employee;
+
+-- 2.avg: 전체 평균을 구하는 함수
+-- 사원들의 전체 급여 평균을 조회, 3자리씩 ','로 구분하고 앞에 '$' 표시
+-- 2026-04-21 기준 급여가 null이면 0으로 기본값 정의, 소수점은 절삭
+
 
 
 
