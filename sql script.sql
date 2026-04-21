@@ -198,21 +198,23 @@ select emp_id,emp_name,hire_date as '입사입',salary as '급여' from employee
 		 ORDER BY [컬럼명, ...] ASC/DESC
 ***************************************/
 -- 급여가 5000 이상인 사원들을 조회, 급여를 오름차순 정렬
-
+select * from employee where salary>=5000 order by salary asc;
 
 -- 2017-01-01 이후 입사한 사원들을 조회
-
+select * from employee where hire_date > '2017-01-01';
 
 -- 입사일이 2015-01-01 이후이거나, 급여가 6000인 이상인 사원들을 조회  
 -- ~이거나, ~또는 : OR - 두 개의 조건중 하나만 만족해도 조회가능
-
+select * from employee where hire_date > '2017-01-01' or salary >=6000;
 
 -- 입사일이 2015-01-01 이후이고, 급여가 6000인 이상인 사원들을 조회  
 -- ~이고 : AND - 두 개의 조건이 모두 만족해야만 조회 가능
+select * from employee where hire_date > '2017-01-01' and salary >=5000;
 
 
 -- 특정 기간 : 2015-01-01 ~ 2017-12-31 사이에 입사한 모든 사원 조회
 -- 부서기준으로 오름차순 정렬
+select * from employee where hire_date>='2015-01-01' and hire_date<='2017-12-31';
 
 
 -- 급여가 6000 이상 8000 이하인 사원들을 모두 조회
@@ -239,15 +241,16 @@ select emp_id,emp_name,hire_date as '입사입',salary as '급여' from employee
 -- 특정 기간 : 2015-01-01 ~ 2017-12-31 사이에 입사한 모든 사원 조회
 -- 부서기준으로 오름차순 정렬
 
-
+select * from employee where hire_date between '2015-01-01' and '2017-12-31';
 -- 급여가 6000 이상 8000 이하인 사원들을 모두 조회
-
-
+select * from employee where salary between '6000' and '8000'order by salary desc;
 -- IN
 -- 사원명이 '일지매','오삼식','김삼순' 인 사원들을 조회
-
+select * from employee where emp_name='일지매' or emp_name='오삼식' or emp_name='김삼순';
+select * from employee where emp_name in ('일지매','오삼식','김삼순');
 
 -- 부서아이디가 MKT, SYS, STG 에 속한 모든 사원 조회
+select * from employee where dept_id='MKT' or dept_id='SYS' or dept_id='STG' order by dept_id;
 
 
 /******************************************************
@@ -257,19 +260,64 @@ select emp_id,emp_name,hire_date as '입사입',salary as '급여' from employee
             WHERE [컬럼명] LIKE '와일드 문자 포함 검색어';		 
 ******************************************************/
 -- '한'씨 성을 가진 모든 사원을 조회
+select * from employee where emp_name like '한%';
 
 -- 영어이름이 'f'로 시작하는 모든 사원을 조회
-
+select * from employee where eng_name like 'f%';
 
 -- 이메일 이름 중 두번째 자리에 'a'가 들어가는 모든 사원을 조회
-
+select * from employee where email like '_a%';
 
 -- 이메일 아이디가 4자인 모든 사원을 조회
+select * from employee where email like '____@%';
+
+select * from employee where dept_id like '%a%';
 
 
+/**************************************************
+내장함수 : 숫자함수, 문자함수, 날짜함수 
+호출되는 위치 -[컬럼리스트],[조건절의 컬럼명]
+/**************************************************/
+-- 숫자함수
+-- 함수 실습을 위한 테이블 : DUAL
+-- 1. 절대값 : abs(숫자)
 
+select abs(100),abs(-100) from dual;
 
+-- 소수점 절삭
+select floor(123.456), truncate(123.456),truncate(123.456,2) from dual;
 
+select * from employee where dept_id = 'SYS';
+
+-- rand()
+
+select rand() from dual;
+
+select floor(rand()*1000) as number from dual;
+
+select truncate(rand() *10000,2) from dual; 
+
+select mod(floor((rand()*1000)+1),2) as result
+	from dual;
+    
+-- 문자함수
+-- 1 concat( 문자열1, 문자열2) : 문자열 결합 함수
+select concat('하','시','바') from dual;
+
+-- 사원테이블의 사원번호, 사원명, 사원명2 컬럼을 생성하여 조회
+-- 사원명2 컬럼을 데이터 형식 : 예) S0001(홍길동)
+
+select emp_id emp_name, concat( emp_id, '(',emp_name,')')as emp_name2 from employee;
+
+select emp_id,emp_name,concat(emp_name,'/',eng_name) as eng_name,hire_date,phone,salary from employee;
+
+-- (2) substring (문자열, 위치, 갯수)공백도 문자열 포함
+select substring('대한민국 만세',1,4) as str1 from dual;
+
+select emp_id,emp_name,substring(hire_date,1,4) as 입사년도 from employee;
+
+select* from employee where substring( hire_date,1,4)='2015';
+select * from emplyee where dept_id="SYS" and substring(hire_date,1,4)='2018';
 
 
 
