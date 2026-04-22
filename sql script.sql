@@ -386,5 +386,66 @@ select concat('$ ',format(floor(avg(ifnull(salary,0))),0)) as 평균 from employ
 
 select concat(format(sum(salary),0),'만원') as 합계,concat(format(floor(avg(ifnull(salary,0))),0),'만원') as 평균 from employee where dept_id='sys';
 
+use hrdb2019;
+select database();
+select concat('$',format(min(salary),0)) as 최소급여 from employee;
+
+-- count : 조건에 맞는 데이터의 row 수를 조회, null은 제외
+select count(*) from employee;
+
+select count(salary) from employee;
+
+select dept_id,count(*) as 사원수 , sum(salary) as 총액 ,avg(salary) as 평균 from employee group by dept_id;
+
+select dept_id, count(*) as 사원수, format(sum(salary),0) as 총급여,format(truncate(avg(salary),0),0) as 평균급여, max(salary) as 최대급여, min(salary) as 최소급여
+from employee  group by dept_id with rollup ;
+
+-- limit 출력갯수를 제한하여 조회
+-- 오라클의 rownum 함수와 통일 
+
+
+-- 전체 사원 리스트 중 상위 5개만 출력
+select * from employee limit 5;
+/************************************************/
+-- [INNER JOIN(EQUI JOIN)] 
+-- 형식1> SELECT [컬럼리스트]
+-- 		 FROM [테이블1] INNER JOIN [테이블2]   
+-- 					   ON [테이블1.조인컬럼] = [테이블2.조인컬럼]  
+-- 형식2> SELECT [컬럼리스트]
+-- 		 FROM [테이블1],[테이블2]   
+-- 		 WHERE [테이블1.조인컬럼] = [테이블2.조인컬럼]  
+
+select count(*) from employee inner join department
+					on employee.dept_id = department.dept_id;  -- 20
+
+select count(*)
+	from employee, department
+    where employee.dept_id = department.dept_id; -- 20
+    
+-- 사원테이블, 부서테이블, 본부테이블 inner join
+
+select * from employee e inner join department d on e.dept_id = d.dept_id inner join unit u on d.unit_id=u.unit_id;
+
+select * from employee e, department d , unit u where e.dept_id=d.dep_id and d.unit_id=u.unit_id;
+
+-- 모든 사원들의 사원번호, 사원명, 부서아이디, 부서명, 입사일, 급여를 조회
+
+select * from employee e, department d where e.dept_id=d.dept_id;
+
+-- 영업부에 속한 사원들의 사원명, 입사일, 퇴사일, 급여, 부서 아이디, 부서명 조회
+
+select * from employee e, department d where e.dept_id=d.dept_id and d.dept_name='영업';
+
+
+
+
+
+
+
+
+
+
+
+
 
 
