@@ -436,16 +436,94 @@ select * from employee e, department d where e.dept_id=d.dept_id;
 
 select * from employee e, department d where e.dept_id=d.dept_id and d.dept_name='영업';
 
+select e.emp_id,e.emp_name,e.hire_date,d.dept_name,u.unit_id,u.unit_name from employee e, department d, unit u where e.dept_id=d.dept_id and u.unit_id= d.unit_id;
+
+show tables;
+select * from customer;
 
 
+use hrdb2019;
+select database();
+
+-- 인사과에 속한 사원들 중에 휴가를 사용한 사원의 내역 조회
+-- 부서명은 인사
+
+select * from employee e, vacation v, department d where e.emp_id=v.emp_id and e.dept_id=d.dept_id and d.dept_name='인사';
+select * from employee e inner join department d on e.dept_id=d.dept_id inner join vacation v on e.emp_id=v.emp_id;
+
+-- 사원별 휴가사용 일수를 조회, 사원아이디, 사원명, 휴가일수 출력
+
+select e.emp_id,e.emp_name,count(*)as count
+from employee e, vacation v where e.emp_id=v.emp_id
+group by e.emp_id order by count desc limit 5;
+
+-- 영업부서 사원의 사원명, 폰번호, 부서명, 휴가사용 이유 조회
+-- 휴가 사용 이유가 '두통'인 사원 , 소속본부 조회
+
+select e.emp_name,e.phone,d.dept_name,v.reason from employee e inner join department d on e.dept_id=d.dept_id 
+							inner join vacation v on e.emp_id=e.emp_id
+                            having reason='두통';
+                            
+-- 2014년부터 2016년까지 입사한 사원들 중에서 퇴사하지 않은 사원들의 사원아이디,사원명,부서명,입사일,소속본부를 조회
+-- 소속본부 기준으로 오름차순 정렬 
+
+select * from employee e, department d where e.dept_id=d.dept_id and left(hire_date,4) between '2014' and '2016'
+and retire_date is null order by dept_name asc;
 
 
+-- 부서별 총급여, 평균 급여, 총 휴가사횽일 수
+
+select dept_name as 부서 ,sum(e.salary) as 총급여,format(avg(e.salary),0) as '평균급여',count(v.emp_id) as 휴가일수
+from employee e inner join department d on e.dept_id=d.dept_id inner join vacation v on e.emp_id=v.emp_id group by dept_name;
+    
+    
+select dept_name,sum(v.duration) from department d , employee e, vacation v 
+where d.dept_id=e.dept_id and e.emp_id=v.emp_id group by dept_name;
 
 
+select distinct dept_id from employee;   
+select dept_id from department;
+
+-- 본부별 부서의 사용일수를 조회
+-- 부서의 누락없이 모두 출력
+
+select u.unit_name, sum(v.duration) from unit u,department d,employee e, vacation v
+			where u.unit_id=d.unit_id and d.dept_id=e.dept_id and e.emp_id=v.emp_id group by u.unit_name;
+            
+select u.unit_id, d.dept_id, sum(v.duration) from employee e right outer join department d on e.dept_id=d.dept_id 
+						left outer join unit u on d.unit_id=u.unit_id
+                        left outer join vacation v on e.emp_id= v.emp_id group by u.unit_Id,d.dept_id;
+
+select * from employee e right outer join department d on e.dept_id=d.dept_id 
+						left outer join unit u on d.unit_id=u.unit_id
+                        left outer join vacation v on e.emp_id= v.emp_id WHERE LEFT(e.hire_date, 4) BETWEEN '2017' AND '2018'
+  AND e.retire_date IS NULL;
+  
+select * from employee e1 left join employee e2 on e1.emp_id = e2.emp_id;
+
+select * from department;
+select dept_id from department where dept_name='정보시스템';
+
+-- [서브쿼리]
+select dept_id from employee where emp_name='홍길동';
+-- [메인쿼리]
+select dept_id,dept_name,start_date from department where dept_id=(select dept_id from employee where emp_name='홍길동');
 
 
+-- 서브쿼리
+select emp_id from employee where emp_name='홍길동';
+
+select * from vacation where emp_id=(select emp_id from employee where emp_name='홍길동');
 
 
+-- 최고 연봉을 받는 사원의 정보를 조회
+select max(salary) from employee;
 
+select * from employee where salary=(select max(salary) from employee);
+
+-- 서브쿼리 
+-- 가장 먼저 퇴사한 사람의 정보
+select min(retire_date) from employee;
+select * from employee where retire_date=(select min(retire_date) from employee);
 
 
