@@ -526,4 +526,46 @@ select * from employee where salary=(select max(salary) from employee);
 select min(retire_date) from employee;
 select * from employee where retire_date=(select min(retire_date) from employee);
 
+ /*******************************************************
+	테이블 결과 합치기 : union, union all
+	형식> 쿼리1 실행 결과 
+         union  => 중복 제거
+         쿼리2 실행 결과
+	형식> 쿼리1 실행 결과 
+         union all  => 중복 허용
+         쿼리2 실행 결과   
+	🔆 쿼리1, 쿼리2의 실행 컬럼의 타입과 이름이 동일해야함
+********************************************************/ 
+-- 영업(MKT), 정보시스템(SYS) 부서의 사원아이디, 사원명, 급여, 부서아이디 조회
+-- union을 사용하여 실행결과 합치기
+select emp_id, emp_name, salary, dept_id 
+	from employee 
+    where dept_id = 'MKT'
+union    
+select emp_id, emp_name, salary, dept_id 
+	from employee 
+    where dept_id = 'SYS'
+union
+select emp_id, emp_name, salary, dept_id 
+	from employee 
+    where dept_id = 'MKT';
+
+-- 영업(MKT), 정보시스템(SYS) 부서의 사원아이디, 사원명, 급여, 부서아이디 조회
+-- union all을 사용하여 실행결과 합치기
+select emp_id, emp_name, salary, dept_id 
+	from employee 
+    where dept_id = 'MKT'
+union    
+select emp_id, emp_name, salary, dept_id 
+	from employee 
+    where dept_id = 'SYS'
+union    
+select emp_id, emp_name, salary, dept_id 
+	from employee 
+    where dept_id = 'SYS'    
+union all
+select emp_id, emp_name, salary, dept_id 
+	from employee 
+    where dept_id = 'MKT';
+
 
