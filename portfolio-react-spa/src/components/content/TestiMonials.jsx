@@ -1,6 +1,6 @@
 import React from 'react';
 import { Title, SubTitle } from '../commons/Titles.jsx';
-import Testimonial from './Testimonial.jsx';
+import Testimonial from '../pages/TestiMonial.jsx';
 
 export default function Testimonials() {
     const testimonials = [
